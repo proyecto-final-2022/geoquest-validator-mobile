@@ -6,7 +6,18 @@ Aplicacion movil para el uso de los clientes de GeoQuest.
 
 
 ### Desarrollo:
-_Para correr la aplicacion desde un telefono es necesario tener descargada la aplicacion de Expo._
+
+#### Requerimientos:
+
+Tener instalada la herramienta **Expo** para el desarrollo con ReactNative.
+```
+npm install --global expo-cli
+```
+
+Para correr la aplicacion desde un telefono, es necesario tener descargada la aplicacion de Expo desde el store correspondiente.
+
+
+#### Comandos utiles:
 
 ```
 yarn run android

@@ -14,7 +14,7 @@ export default Home = ({navigation}) => {
 
 const styles = StyleSheet.create({
   mainView: {
-    display: "flex",
+    flex: 1,
     justifyContent: "center",
     alignItems: "center"
   }

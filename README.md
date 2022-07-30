@@ -33,3 +33,8 @@ yarn run ios
 yarn run web
 ```
 - Para iniciar la aplicacion en el navegador.
+
+```
+yarn start --lan
+```
+- Para inicial la aplicacion en la red local.

@@ -1,0 +1,5 @@
+{
+  "validatorUrl": "http://192.168.0.24:8080",
+
+  "requestTimeout": 5000
+}

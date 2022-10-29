@@ -5,7 +5,7 @@ import axios from "axios";
 
 
 export async function couponHash(coupon) {
-  const couponTextLine = `${coupon.id}${coupon.clientId}${coupon.description}${coupon.used}`.toLowerCase();
+  const couponTextLine = `${coupon.id}${coupon.userId}${coupon.clientId}${coupon.description}${coupon.used}`.toLowerCase();
   return await JSHash(couponTextLine, CONSTANTS.HashAlgorithms.sha256);
 }
 
@@ -23,6 +23,7 @@ function isValidCoupon(coupon) {
   const attributes = [  // Properties needed for validation.
     "id",
     "clientId",
+    "userId",
     "description",
     "used",
   ];

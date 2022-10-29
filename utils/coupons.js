@@ -40,7 +40,7 @@ function isValidQRData(data) {
 
 export async function validate(scannedData) {
   if (!isValidQRData(scannedData))
-    return false;
+    return {validity: false, coupon: undefined};
 
   const coupon = JSON.parse(scannedData);
   const hash = await couponHash(coupon);

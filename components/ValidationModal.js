@@ -9,7 +9,7 @@ export default ValidationModal = ({hide, scannedData}) => {
   const [notifyUse, setNotifyUse] = useState();
 
   return (
-    <Modal style={styles.modal} isVisible={true}>
+    <Modal style={styles.modal} isVisible={true} onRequestClose={hide}>
       {/* Siempre que se renderice este componente es porque el Modal es visible */}
       { notifyUse ?
         <NotifyUsageResult 

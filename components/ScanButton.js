@@ -18,8 +18,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     width: 300,
     height: 300,
-    backgroundColor: "#55AAFF",
+    backgroundColor: "#CA955C",
     borderRadius: 300,
+    borderWidth: 3,
+    borderColor: '#8c6132'
   },
 
   buttonText: {

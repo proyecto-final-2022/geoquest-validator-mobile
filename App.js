@@ -10,8 +10,8 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="QRScan" component={QRScan} />
+        <Stack.Screen name="Home" component={Home} options={{ headerShown: false}}/>
+        <Stack.Screen name="QRScan" component={QRScan} options={{ headerStyle: {backgroundColor: '#FFF9CA'}}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

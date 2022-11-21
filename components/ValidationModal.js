@@ -11,7 +11,7 @@ export default function ValidationModal({hide, scannedData}) {
   return (
     <Modal style={styles.modal} isVisible={true} onRequestClose={hide}>
       {/* Siempre que se renderice este componente es porque el Modal es visible */}
-      { scannedData ?
+      { notifyUse ?
         <NotifyUsageResult 
           hide={hide}
           coupon={notifyUse}

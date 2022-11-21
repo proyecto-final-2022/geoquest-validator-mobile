@@ -6,7 +6,7 @@ import { CustomSpinner } from "./CustomSpinner";
 
 export default function NotifyUsageResult({coupon, hide}) {
   const [failure, setFailure] = useState(undefined);
-  
+
   useEffect(() => {
     notifyUsage(coupon).then(_res => {
       setFailure(false);
@@ -21,10 +21,13 @@ export default function NotifyUsageResult({coupon, hide}) {
     return <CustomSpinner />;
   }
 
-
-  var backgroundColor = "#44BB22";
+  var backgroundColor = "#64DB52";
+  var buttonBgColor = "#54CB32";
+  var buttonBorderColor = "#249B02";
   if (failure) {
-    backgroundColor = "#FF1111";
+    backgroundColor = "#F58553";
+    buttonBgColor = "#EE6432";
+    buttonBorderColor = "#DD5422";
   }
 
   var resultText = "Se notificó el uso del cupón";
@@ -38,7 +41,14 @@ export default function NotifyUsageResult({coupon, hide}) {
         <Text style={styles.resultText}>{resultText}</Text>
       </View>
       <View style={styles.resultItemContainer}>
-        <TouchableOpacity style={styles.hideButton} onPress={hide}>
+        <TouchableOpacity 
+          style={{
+            ...styles.hideButton, 
+            backgroundColor: buttonBgColor,
+            borderColor: buttonBorderColor
+          }} 
+          onPress={hide}
+        >
           <Text style={styles.hideButtonText}>Volver</Text>
         </TouchableOpacity>
       </View>
@@ -59,7 +69,8 @@ const styles = StyleSheet.create({
   resultText: {
     fontWeight: "bold",
     fontSize: 32,
-    color: "white"
+    color: "white",
+    textAlign: "center"
   },
 
   resultItemContainer: {
@@ -74,7 +85,6 @@ const styles = StyleSheet.create({
     width: "50%",
     padding: "3%",
     borderWidth: 2,
-    borderColor: "#BBBBBB"
   },
 
   hideButtonText: {

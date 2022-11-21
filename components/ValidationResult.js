@@ -23,23 +23,23 @@ export default function ValidationResult({ notifyUse, scannedData, hide }) {
     return <CustomSpinner />;
   }
 
-  /* if (!isValid) { */
-  /*   return ( */
-  /*     <View style={styles.failureContainer}> */
-  /*       <View style={styles.failureItemContainer}> */
-  /*         <Text style={styles.failureText}>Cupón Inválido</Text> */
-  /*       </View> */
-  /*       <View style={styles.failureItemContainer}> */
-  /*         <TouchableOpacity style={styles.failureButton} onPress={hide}> */
-  /*           <Image  */
-  /*             style={styles.failureButtonImage} */
-  /*             source={require("../assets/close-circular.png")}  */
-  /*           /> */
-  /*         </TouchableOpacity> */
-  /*       </View> */
-  /*     </View> */
-  /*   ); */
-  /* } */
+  if (!isValid) {
+    return (
+      <View style={styles.failureContainer}>
+        <View style={styles.failureItemContainer}>
+          <Text style={styles.failureText}>Cupón Inválido</Text>
+        </View>
+        <View style={styles.failureItemContainer}>
+          <TouchableOpacity style={styles.failureButton} onPress={hide}>
+            <Image 
+              style={styles.failureButtonImage}
+              source={require("../assets/close-circular.png")} 
+            />
+          </TouchableOpacity>
+        </View>
+      </View>
+    );
+  }
 
   return (
     <View style={styles.successContainer}>

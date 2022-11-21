@@ -10,39 +10,37 @@ export default function QRScan() {
   const [hasPermission, setHasPermission] = useState(null);
   const [scannedData, setScannedData] = useState(undefined);
 
-  return <ValidationModal scannedData={{attr: "un objeto"}}/>;
+  useEffect(() => {
+    (async () => {
+      const { status } = await BarCodeScanner.requestPermissionsAsync();
+      setHasPermission(status === "granted");
+    })();
+  }, []);
 
-  /* useEffect(() => { */
-  /*   (async () => { */
-  /*     const { status } = await BarCodeScanner.requestPermissionsAsync(); */
-  /*     setHasPermission(status === "granted"); */
-  /*   })(); */
-  /* }, []); */
+  if (hasPermission === null) {
+    return <Text>Requesting for camera permission</Text>;
+  }
+  if (hasPermission === false) {
+    return <Text>No access to camera</Text>;
+  }
 
-  /* if (hasPermission === null) { */
-  /*   return <Text>Requesting for camera permission</Text>; */
-  /* } */
-  /* if (hasPermission === false) { */
-  /*   return <Text>No access to camera</Text>; */
-  /* } */
+  const handleBarCodeScanned = ({data}) => {
+    if (data)
+      setScannedData(data);
+  };
 
-  /* const handleBarCodeScanned = ({data}) => { */
-  /*   if (data) */
-  /*     setScannedData(data); */
-  /* }; */
-
-  /* return ( */
-  /*   <View style={styles.qrScannerContainer}> */
-  /*     <BarCodeScanner */
-  /*       barcodeTypes={[BarCodeScanner.Constants.BarCodeType.qr]} */
-  /*       onBarCodeScanned={handleBarCodeScanned} */
-  /*       style={[StyleSheet.absoluteFillObject, styles.barcodeScanner]} */
-  /*     /> */
-  /*     { scannedData &&  */
-  /*       <ValidationModal scannedData={scannedData} hide={() => setScannedData(undefined)}/> */
-  /*     } */
-  /*   </View> */
-  /* ); */
+  return (
+    <View style={styles.qrScannerContainer}>
+      <BarCodeScanner
+        barcodeTypes={[BarCodeScanner.Constants.BarCodeType.qr]}
+        onBarCodeScanned={handleBarCodeScanned}
+        style={[StyleSheet.absoluteFillObject, styles.barcodeScanner]}
+      />
+      { scannedData && 
+        <ValidationModal scannedData={scannedData} hide={() => setScannedData(undefined)}/>
+      }
+    </View>
+  );
 }
 
 

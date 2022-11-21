@@ -8,11 +8,10 @@ import NotifyUsageResult from "./NotifyUsageResult";
 export default function ValidationModal({hide, scannedData}) {
   const [notifyUse, setNotifyUse] = useState();
 
-  const bla = false;
   return (
     <Modal style={styles.modal} isVisible={true} onRequestClose={hide}>
       {/* Siempre que se renderice este componente es porque el Modal es visible */}
-      { bla ?
+      { scannedData ?
         <NotifyUsageResult 
           hide={hide}
           coupon={notifyUse}
@@ -20,7 +19,7 @@ export default function ValidationModal({hide, scannedData}) {
         :
         <ValidationResult 
           hide={hide}
-          scannedData={"{\"asd\": 10}"} 
+          scannedData={scannedData} 
           notifyUse={setNotifyUse}
         />
       }

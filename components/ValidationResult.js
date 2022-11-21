@@ -64,8 +64,7 @@ const styles = StyleSheet.create({
   failureContainer: {
     display: "flex",
     flexDirection: "column",
-    /* backgroundColor: "#FF1111", */
-    backgroundColor: "#E67340",
+    backgroundColor: "#F16835",
     justifyContent: "space-between",
     alignItems: "center",
     height: "100%",
@@ -107,7 +106,7 @@ const styles = StyleSheet.create({
   },
 
   successButton: {
-    backgroundColor: "#55AAFF",
+    backgroundColor: "#CA955C",
     padding: "3%",
   },
 
@@ -119,7 +118,7 @@ const styles = StyleSheet.create({
 
   titleContainer: {
     padding: "3%",
-    backgroundColor: "#44BB22",
+    backgroundColor: "#A0C562",
     flexGrow: 0,
     flexShrink: 0,
     flexBasis: "auto",

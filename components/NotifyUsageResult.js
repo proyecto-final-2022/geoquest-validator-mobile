@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import { notifyUsage } from "../utils/coupons";
-import { CustomSpinner } from "./CustomSpinner";
+import CustomSpinner from "./CustomSpinner";
 
 
 export default function NotifyUsageResult({coupon, hide}) {
   const [failure, setFailure] = useState(undefined);
 
   useEffect(() => {
-    console.log("Por notificar");
     notifyUsage(coupon).then(_res => {
       setFailure(false);
     }).catch(err => {

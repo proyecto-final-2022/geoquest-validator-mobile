@@ -8,6 +8,7 @@ export default function NotifyUsageResult({coupon, hide}) {
   const [failure, setFailure] = useState(undefined);
 
   useEffect(() => {
+    console.log("Por notificar");
     notifyUsage(coupon).then(_res => {
       setFailure(false);
     }).catch(err => {
@@ -84,7 +85,7 @@ const styles = StyleSheet.create({
   hideButton: {
     width: "50%",
     padding: "3%",
-    borderWidth: 2,
+    borderWidth: 2
   },
 
   hideButtonText: {

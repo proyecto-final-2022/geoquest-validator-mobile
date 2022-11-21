@@ -61,6 +61,7 @@ export async function validate(scannedData) {
 
 
 export async function notifyUsage(coupon) {
+  console.log("Notificando...");
   const hash = await couponHash(coupon);
   const url = Config.validatorUrl + `/coupons/${coupon.id}/${hash}`;
   return await axios.patch(url, { timeout: Config.requestTimeout });

@@ -15,6 +15,8 @@ export default function ValidationResult({ notifyUse, scannedData, hide }) {
       setIsValid(validity);
       setCoupon(coupon);
     }).catch(error => {
+      alert("Error en la conexion con el servidor.");
+      hide();
       console.log(error);
     });
   }, [scannedData]);
@@ -64,7 +66,7 @@ const styles = StyleSheet.create({
   failureContainer: {
     display: "flex",
     flexDirection: "column",
-    backgroundColor: "#F16835",
+    backgroundColor: "#F58553",
     justifyContent: "space-between",
     alignItems: "center",
     height: "100%",

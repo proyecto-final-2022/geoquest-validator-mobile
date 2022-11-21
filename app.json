@@ -21,6 +21,7 @@
       "supportsTablet": true
     },
     "android": {
+      "icon": "./assets/validator-icon.png",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"

@@ -30,7 +30,9 @@
     "underscore": "^1.13.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9"
+    "@babel/core": "^7.12.9",
+    "eslint": "^8.28.0",
+    "eslint-plugin-react": "^7.31.11"
   },
   "private": true
 }

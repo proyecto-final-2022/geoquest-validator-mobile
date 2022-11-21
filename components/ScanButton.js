@@ -1,8 +1,9 @@
-import { Text, TouchableOpacity } from 'react-native';
+import React from "react";
+import { Text, TouchableOpacity } from "react-native";
 import { StyleSheet } from "react-native";
 
 
-export default ScanButton = ({navigation}) => {
+export default function ScanButton({navigation}) {
   return (
     <TouchableOpacity
       onPress={() => navigation.navigate("QRScan")}
@@ -11,7 +12,7 @@ export default ScanButton = ({navigation}) => {
       <Text style={styles.buttonText}>Validar Cupón</Text>
     </TouchableOpacity>
   );
-};
+}
 
 const styles = StyleSheet.create({
   button: {
@@ -21,7 +22,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#CA955C",
     borderRadius: 300,
     borderWidth: 3,
-    borderColor: '#8c6132'
+    borderColor: "#8c6132"
   },
 
   buttonText: {

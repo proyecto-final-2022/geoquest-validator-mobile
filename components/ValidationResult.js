@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { StyleSheet, View, Text, TouchableOpacity, Image } from "react-native";
 import CustomSpinner from "./CustomSpinner.js";
 import CouponInfo from "./CouponInfo.js";
@@ -6,12 +6,12 @@ import NotifyUsageButton from "./NotifyUsageButton.js";
 import { validate } from "../utils/coupons.js";
 
 
-export default ValidationResult = ({notifyUse, scannedData, hide}) => {
+export default function ValidationResult({ notifyUse, scannedData, hide }) {
   const [isValid, setIsValid] = useState(undefined);
   const [coupon, setCoupon] = useState();
 
   useEffect(() => {
-    validate(scannedData).then(({validity, coupon}) => {
+    validate(scannedData).then(({ validity, coupon }) => {
       setIsValid(validity);
       setCoupon(coupon);
     }).catch(error => {
@@ -23,20 +23,23 @@ export default ValidationResult = ({notifyUse, scannedData, hide}) => {
     return <CustomSpinner />;
   }
 
-  if (!isValid) {
-    return (
-      <View style={styles.failureContainer}>
-        <View style={styles.failureItemContainer}>
-          <Text style={styles.failureText}>Cupón Inválido</Text>
-        </View>
-        <View style={styles.failureItemContainer}>
-          <TouchableOpacity style={styles.failureButton} onPress={hide}>
-            <Image style={styles.failureButtonImage} source={require("../assets/close-circular.png")} />
-          </TouchableOpacity>
-        </View>
-      </View>
-    );
-  }
+  /* if (!isValid) { */
+  /*   return ( */
+  /*     <View style={styles.failureContainer}> */
+  /*       <View style={styles.failureItemContainer}> */
+  /*         <Text style={styles.failureText}>Cupón Inválido</Text> */
+  /*       </View> */
+  /*       <View style={styles.failureItemContainer}> */
+  /*         <TouchableOpacity style={styles.failureButton} onPress={hide}> */
+  /*           <Image  */
+  /*             style={styles.failureButtonImage} */
+  /*             source={require("../assets/close-circular.png")}  */
+  /*           /> */
+  /*         </TouchableOpacity> */
+  /*       </View> */
+  /*     </View> */
+  /*   ); */
+  /* } */
 
   return (
     <View style={styles.successContainer}>
@@ -54,17 +57,18 @@ export default ValidationResult = ({notifyUse, scannedData, hide}) => {
       </View>
     </View>
   );
-};
+}
 
 
 const styles = StyleSheet.create({
   failureContainer: {
     display: "flex",
     flexDirection: "column",
-    backgroundColor: "#FF1111",
+    /* backgroundColor: "#FF1111", */
+    backgroundColor: "#E67340",
     justifyContent: "space-between",
     alignItems: "center",
-    height: "100%"
+    height: "100%",
   },
 
   failureItemContainer: {

@@ -1,17 +1,18 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { StyleSheet } from "react-native";
 import Modal from "react-native-modal";
 import ValidationResult from "./ValidationResult.js";
 import NotifyUsageResult from "./NotifyUsageResult";
 
 
-export default ValidationModal = ({hide, scannedData}) => {
+export default function ValidationModal({hide, scannedData}) {
   const [notifyUse, setNotifyUse] = useState();
 
+  const bla = false;
   return (
     <Modal style={styles.modal} isVisible={true} onRequestClose={hide}>
       {/* Siempre que se renderice este componente es porque el Modal es visible */}
-      { notifyUse ?
+      { bla ?
         <NotifyUsageResult 
           hide={hide}
           coupon={notifyUse}
@@ -19,7 +20,7 @@ export default ValidationModal = ({hide, scannedData}) => {
         :
         <ValidationResult 
           hide={hide}
-          scannedData={scannedData} 
+          scannedData={"{\"asd\": 10}"} 
           notifyUse={setNotifyUse}
         />
       }

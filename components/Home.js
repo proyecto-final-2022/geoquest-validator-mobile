@@ -1,9 +1,10 @@
-import { StyleSheet, View, useWindowDimensions, Image, ScrollView } from 'react-native';
+import React from "react";
+import { StyleSheet, View, useWindowDimensions, Image } from "react-native";
 import ScanButton from "./ScanButton.js";
 import Logo from "../assets/GeoQuestLogo.png";
 
 
-export default Home = ({navigation}) => {
+export default function Home({navigation}) {
   const {height} = useWindowDimensions();
 
   return (
@@ -16,25 +17,25 @@ export default Home = ({navigation}) => {
       <ScanButton navigation={navigation} />
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   root: {
     flex: 1,
-    backgroundColor: '#FFF9CA',
-    alignItems: 'center',
-    justifyContent: 'space-evenly',
+    backgroundColor: "#FFF9CA",
+    alignItems: "center",
+    justifyContent: "space-evenly",
     padding: 20,
   },
   logo: {
-    width: '70%',
+    width: "70%",
     maxWidth: 300,
     maxHeight: 200,
   },
   title: {
     fontSize: 24,
-    fontWeight: 'bold',
-    color: '#051C60',
+    fontWeight: "bold",
+    color: "#051C60",
     margin: 10,
   },
 });
